@@ -1,0 +1,44 @@
+<!-- <mat-toolbar style="background-color:#0288D1 ">
+    <span>DIEMS</span>
+    <div class="spacer"></div>
+    <a style="color:#feffff " routerLink="/login">signout</a>
+</mat-toolbar> -->
+<div class="body" class="header" class="pageHeader">
+ <mat-toolbar color="primary">
+        <button mat-icon-button (click)="toggleSideBar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span> DIEMS </span>
+
+        <div class="spacer"></div>
+    <a style="color:#feffff " routerLink="/login">signout</a>
+
+        <!-- <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px">
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item  [routerLink]= "['/login']">
+                            <mat-icon [routerLink]= "['/login']">exit_to_app</mat-icon>
+                            Sign out
+                        </button>
+                    </mat-menu>
+
+                </li>
+            </ul>
+        </div> -->
+</mat-toolbar> 
+</div>

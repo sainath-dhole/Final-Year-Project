@@ -1,0 +1,306 @@
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <!-- <div class="contain">
+
+            <div class="wrapper">
+              
+              <div class="form">
+                <h3>Enter your details</h3>
+                <form action="">
+                  <p>
+                    <label for="">Full name</label>
+                    <input type="text">
+                  </p>
+                  <p>
+                    <label for="">class</label>
+                    <input type="text">
+                  </p>
+                  <p>
+                    <label for="">Email Address</label>
+                    <input type="text">
+                  </p>
+                  <p>
+                    <label for="">Phone no</label>
+                    <input type="number">
+                  </p>
+                  <p>
+                    <label for="">Branch</label>
+                    <input type="text">
+                  </p>
+                  <p class="full-width">
+                    <label for="">Write your skills</label>
+                    <textarea name="" id="" cols="30" rows="7"></textarea>
+                  </p>
+                  <p class="full-width">
+                    <button>Submit</button>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>        <router-outlet></router-outlet> -->
+          <div class="container-fluid">
+
+            <div class="text-right mb-4">
+              <button class="btn btn-primary" (click)="openModal(popup, null)">
+                <i class="fa fa-plus"></i> Add
+              </button>
+            </div>
+            </div>
+          
+          
+           <ng-template #popup let-d="dismiss">
+            <div class="modal-header text-primary">
+              {{employeeDetails ? 'Update' : 'Add'}} employee
+            </div>
+          
+            <div class="modal-body">
+              <!--<form [formGroup]="detailsform">
+          
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" formControlName="name"
+                         class="form-control" [ngClass]="{'error-border': !detailsform.get('name').valid && detailsform.get('name').dirty}"/>
+                </div>
+          
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input id="email" type="text" formControlName="email"
+                         class="form-control" [ngClass]="{'error-border': !detailsform.get('email').valid && detailsform.get('email').dirty}"/>
+                </div>
+                <!-- <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input id="name" type="text" formControlName="name"
+                  class="form-control"  [ngClass]="{'error-border': !form.get('name').valid && form.get('name').dirty}"/>
+            </div>
+          
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input id="email" type="text" formControlName="email"
+                         class="form-control" [ngClass]="{'error-border': !form.get('email').valid && form.get('email').dirty}"/>
+                </div> -->
+               <!-- <div class="form-group">
+                  <label for="phone">Phone Number</label>
+          <input id="phone" type="text" formControlName="phone"
+               class="form-control" [ngClass]="{'error-border': !detailsform.get('phone').valid && detailsform.get('phone').dirty}"/>
+                </div>
+                <div class="form-group">
+                  <label for="tenthpercentage">10th Percentage</label>
+          <input id="tenthpercentage" type="text" formControlName="tenthpercentage"
+               class="form-control" [ngClass]="{'error-border': !detailsform.get('tenthpercentage').valid && detailsform.get('tenthpercentage').dirty}"/>
+          </div>
+                <div class="form-group">
+                  <label for="twelvepercentage">12th Percentage</label>
+                  <input id="twelvepercentage" type="text" formControlName="twelvepercentage"
+                         class="form-control" [ngClass]="{'error-border': !detailsform.get('twelvepercentage').valid && detailsform.get('twelvepercentage').dirty}"/>
+                               </div>
+                <div class="form-group">
+                  <label for="diploma">Diploma</label>
+          <input id="diploma" type="text" formControlName="diploma"
+               class="form-control" [ngClass]="{'error-border': !detailsform.get('diploma').valid && detailsform.get('diploma').dirty}"/>
+                </div>
+                <div class="form-group">
+                <label for="sgpa">SGPA</label>
+          <input id="sgpa" type="text" formControlName="sgpa"
+             class="form-control" [ngClass]="{'error-border': !detailsform.get('sgpa').valid && detailsform.get('sgpa').dirty}"/>
+               </div>
+                <div class="form-group">
+                  <label for="internship">Internship</label>
+          <input id="internship" type="text" formControlName="internship"
+           class="form-control" [ngClass]="{'error-border': !detailsform.get('internship').valid && detailsform.get('internship').dirty}"/>
+                </div>
+                <div class="form-group">
+                  <label for="links">Links</label>
+          <input id="links" type="text" formControlName="links"
+          class="form-control" [ngClass]="{'error-border': !detailsform.get('links').valid && detailsform.get('links').dirty}"/>
+                </div>
+          
+              
+          
+              <div class="text-center">
+                <button class="btn btn-primary btn-sm pl-4 pr-4 mr-2"
+                        [disabled]="detailsform.invalid"
+                        (click)="addEmployee()">Save</button>
+                <button class="btn btn-secondary btn-sm pl-4 pr-4 ml-2" (click)="d()">Cancel</button>
+              </div>
+            </form>-->
+            <form [formGroup]="detailsform">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" formControlName="name" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('name').valid && detailsform.get('name').dirty}" />
+              </div>
+
+              <div class="form-group">
+                <label for="class">Class</label>
+                <input id="class" type="text" formControlName="class" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('class').valid && detailsform.get('class').dirty}" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="text" formControlName="email" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('class').valid && detailsform.get('class').dirty}" />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="text" formControlName="phone" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('class').valid && detailsform.get('class').dirty}"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="tenthpercentage">10th Percentage</label>
+                <input id="tenthpercentage" type="text" formControlName="tenthpercentage"class="form-control" 
+                [ngClass]="{'error-border': !detailsform.get('tenthpercentage').valid && detailsform.get('tenthpercentage').dirty}"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="twelvepercentage">12th Percentage</label>
+                <input id="twelvepercentage" type="text" formControlName="twelvepercentage" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('twelvepercentage').valid && detailsform.get('twelvepercentage').dirty}"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="diploma">Diploma</label>
+                <input id="diploma" type="text" formControlName="diploma" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('diploma').valid && detailsform.get('diploma').dirty}"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="sgpa">SGPA</label>
+                <input id="sgpa" type="text" formControlName="sgpa" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('sgpa').valid && detailsform.get('sgpa').dirty}"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="internship">Internship</label>
+                <input id="internship" type="text" formControlName="internship" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('internship').valid && detailsform.get('internship').dirty}"/>
+              </div>
+              
+              <div class="form-group">
+                <label for="links">Links</label>
+                <input id="links" type="text" formControlName="links" class="form-control"
+                [ngClass]="{'error-border': !detailsform.get('links').valid && detailsform.get('links').dirty}"/>
+              </div>
+
+              <div class="text-center">
+                <button class="btn btn-primary btn-sm pl-4 pr-4 mr-2" [disabled]="detailsform.invalid" (click)="employeeDetails ? updateEmployee(employeeDetails.id) :addEmployee(); d()">Save</button>
+                <button class="btn btn-secondary btn-sm pl-4 pr-4 ml-2" (click)="d()">Cancel</button>
+              </div>
+            </form>
+            </div>
+          
+          </ng-template>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+<app-footer></app-footer>
+
+<div class="container-fluid">
+
+  <div class="text-right mb-4">
+    <button class="btn btn-primary" (click)="openModal(popup, null)">
+      <i class="fa fa-plus"></i> Add
+    </button>
+  </div>
+
+  <div class="row" *ngIf="employeeList.length">
+    <div class="col-md-3" *ngFor="let employee of employeeList">
+
+      <div class="card">
+        <div class="heading">{{employee.name}}</div>
+        <div class="sub-heading">{{employee.email}}</div>
+
+        <div class="icon">
+          <i class="fa fa-edit text-primary" (click)="openModal(popup, employee.id)"></i>
+          <i class="fa fa-trash text-danger" (click)="deleteEmployee(employee.id)"></i>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<ng-template #popup let-d="dismiss">
+  <div class="modal-header text-primary">
+    {{employeeDetails ? 'Update' : 'Add'}} employee
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="detailsform">
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name"
+               class="form-control" [ngClass]="{'error-border': !detailsform.get('name').valid && detailsform.get('name').dirty}"/>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" formControlName="email"
+               class="form-control" [ngClass]="{'error-border': !detailsform.get('email').valid && detailsform.get('email').dirty}"/>
+      </div>
+      <!-- <div class="form-group">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" formControlName="name"
+        class="form-control"  [ngClass]="{'error-border': !form.get('name').valid && form.get('name').dirty}"/>
+  </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" formControlName="email"
+               class="form-control" [ngClass]="{'error-border': !form.get('email').valid && form.get('email').dirty}"/>
+      </div> -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="text" formControlName="phone" class="form-control"
+         [ngClass]="{'error-border': !detailsform.get('phone').valid && detailsform.get('phone').dirty}"/>
+      </div>
+      <div class="form-group">
+        <label for="tenthpercentage">10th Percentage</label>
+        <input id="tenthpercentage" type="text" formControlName="tenthpercentage" class="form-control"
+        [ngClass]="{'error-border': !detailsform.get('tenthpercentage').valid && detailsform.get('tenthpercentage').dirty}"/>
+      </div>
+      <div class="form-group">
+        <label for="twelvepercentage">12th Percentage</label>
+        <input id="twelvepercentage" type="text" formControlName="twelvepercentage" class="form-control"
+        [ngClass]="{'error-border': !detailsform.get('twelvepercentage').valid && detailsform.get('twelvepercentage').dirty}"/>
+      </div>
+      <div class="form-group">
+        <label for="diploma">Diploma</label>
+        <input id="diploma" type="text" formControlName="diploma" class="form-control"
+        [ngClass]="{'error-border': !detailsform.get('diploma').valid && detailsform.get('diploma').dirty}"/>
+      </div>
+      <div class="form-group">
+        <label for="sgpa">SGPA</label>
+        <input id="sgpa" type="text" formControlName="sgpa" class="form-control"
+        [ngClass]="{'error-border': !detailsform.get('sgpa').valid && detailsform.get('sgpa').dirty}"/>
+      </div>
+      <div class="form-group">
+        <label for="internship">Internship</label>
+        <input id="internship" type="text" formControlName="internship" class="form-control"
+        [ngClass]="{'error-border': !detailsform.get('internship').valid && detailsform.get('internship').dirty}"/>
+      </div>
+      <div class="form-group">
+        <label for="links">Links</label>
+        <input id="links" type="text" formControlName="links" class="form-control"
+        [ngClass]="{'error-border': !detailsform.get('links').valid && detailsform.get('links').dirty}"/>
+      </div>
+
+      <div class="text-center">
+        <button class="btn btn-primary btn-sm pl-4 pr-4 mr-2"
+              [disabled]="detailsform.invalid"
+              (click)="employeeDetails ? updateEmployee(employeeDetails.id) :addEmployee();d()">Save</button>
+        <button class="btn btn-secondary btn-sm pl-4 pr-4 ml-2" (click)="d()">Cancel</button>
+      </div>
+  </form>
+  </div>
+
+</ng-template>

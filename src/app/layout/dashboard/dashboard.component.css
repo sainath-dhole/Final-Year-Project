@@ -1,0 +1,33 @@
+.grid {
+    display: grid;
+    grid-template-rows: 2fr 5fr 2fr;
+    /* grid-template-columns: repeat(12, 1fr); */
+    grid-gap: 10px;
+  }
+  .box {
+    color: white;
+    font-size: 4vw;
+    padding: 10px;
+    background: whitesmoke;
+    text-align: center;
+    grid-column: span 12;
+  }
+  .histogram {
+    color: white;
+    font-size: 4vw;
+    padding: 10px;
+    background: whitesmoke;
+    text-align: center;
+    grid-column: span 7;
+    
+  }
+  .donout {
+    color: white;
+    font-size: 4vw;
+    padding: 10px;
+    background: whitesmoke;
+    text-align: center;
+    grid-column: span 5;
+  }
+  
+  

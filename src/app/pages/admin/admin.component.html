@@ -1,0 +1,82 @@
+<!-- <div class="login-page" >
+    <mat-card class="mat-elevation-z12">
+     <img class="tile-header" width="50px" height="50px" src="../../../assets/images/diems11.jpg">
+     <mat-card-content>
+            <form (ngSubmit)="login()" action="">
+                <div class="centers">
+            <h1>Welcome</h1>
+            </div>
+                <mat-form-field>
+            <input matInput type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="Enter email Id" required>
+                </mat-form-field>
+                <mat-form-field>
+            <input matInput type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
+                </mat-form-field>
+                <div class="centerss">
+                    <a href="#" routerLink="/firstpage">Back</a>
+                     </div>
+                <div class="login-button">
+                <div class="centerr">
+            <button mat-raised-button type="submit" class="btn btn-primary">Login</button>
+                </div>
+                </div>
+                <div class="center">
+            <!-- <a href="#" routerLink="/register">New User Register</a> --
+             </div>
+             <!-- <div class="text-danger">
+            <p *ngIf="errorMessage.length > 0">
+                {{errorMessage}}</p>
+        
+            <p *ngIf="error.message.length > 0">
+                {{error.message}} </p> 
+             </div> --
+            </form>
+</mat-card-content>  
+</mat-card>
+</div> -->
+
+<div class="bg">
+
+    <div class="contain">
+      <div class="wrapper">
+        <div class="contacts">
+          <img class="tile-header" src="../../../assets/images/clg.jpg">
+          <h3>Our contacts</h3>
+    
+          <ul>
+            <li>Deogiri Institute of Engineering And Management Studies</li>
+        <li>Aurangabad</li>
+        <li>dietms.org</li>
+          </ul>
+        </div>
+    
+        <div class="form">
+          <img class="tile-header" src="../../../assets/images/diems11.jpg"><hr>
+          <!-- <h2>Welcome</h2> -->
+          
+          <form (ngSubmit)="login()" action="" >
+            <p class="full-width">
+                <input  type="email" name="email" class="form-control" [(ngModel)]="email" placeholder="Enter email Id" required>
+            </p>
+            <p class="full-width">
+                <input  type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Enter Password" required>
+            </p>
+            <button  type="submit" >Login</button>
+                <div class="grid-container">
+
+                <div><a href="#" routerLink="/firstpage">Back</a>
+                </div>
+            </div>
+
+                <!-- <div class="text-danger">
+                    <p *ngIf="errorMessage.length > 0">
+                        {{errorMessage}}</p>
+                
+                    <p *ngIf="error.message.length > 0">
+                        {{error.message}} </p> 
+                     </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
