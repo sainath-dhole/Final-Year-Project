@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  uid;
   email="";
   password="";
   message = '';
@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
     if (this.validateForm(this.email, this.password)) {
       this.authservice.registerWithEmail(this.email, this.password)
         .then(() => {
+          
           this.message = "you are register with data on firbase"
           //this.router.navigate(['/userinfo'])
         }).catch(_error => {

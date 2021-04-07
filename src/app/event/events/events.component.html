@@ -1,0 +1,38 @@
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+<div class="grid">
+    <article>
+      <img src="../../../assets/images/sih.jpg" alt="Sample photo">
+      <div class="text">
+          <div class="container">
+        <h1>SMART INDIA HACKATHON</h1></div>
+        <p>Smart India Hackathon is a nationwide initiative to provide students with a platform to solve 
+           some of the pressing problems we face in our daily lives, and thus inculcate a culture of 
+           product innovation and a mindset of problem-solving.</p>
+      </div>
+      </article>
+      <article>
+      <img src="../../../assets/images/hack.jpeg" alt="Sample photo">
+      <div class="text">
+        <div class="container"><h1>HACKATHON 2021 BY R -INFINITY CLUB</h1></div>
+        <p>Hackathon is being conducted for the students of Engineering by
+           the students of Engineering of the Deogiri Institute of Engineering and Management studies.</p>
+      </div>
+      </article>
+      <article>
+      <img src="../../../assets/images/nature_club_grow_plant_1_29-360x250.jpg" alt="Sample photo">
+      <div class="text">
+        <div class="container"><h1>Grow a Plant</h1></div>
+        <p>Under this activity First Year, Direct Second Year and FY MBA students 
+            were welcomed with a plant and asked them to grow and take care of the plant.</p>
+      </div>
+      </article>
+      </div>
+      </mat-drawer-content>
+      </mat-drawer-container>
+    <app-footer></app-footer>

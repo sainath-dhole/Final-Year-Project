@@ -9,35 +9,42 @@ import * as firebase from 'firebase/app';
 })
 export class AuthService {
 
-  authState: any = null;
+  UserauthState: any = null;
   isLoggedIn: boolean;
 
   constructor(private afu: AngularFireAuth, private router: Router) { 
     this.afu.authState.subscribe((auth =>{
-      this.authState = auth;
+      if(this.UserauthState){
+      this.UserauthState = auth.uid;
+    }
     }))
   }
 
   // all firebase getdata functions
 
   get isUserAnonymousLoggedIn(): boolean {
-    return (this.authState !== null) ? this.authState.isAnonymous : false
+    return (this.UserauthState !== null) ? this.UserauthState.isAnonymous : false
   }
 
-  get currentUserId(): string {
-    return (this.authState !== null) ? this.authState.uid : ''
-  }
+   currentUserId() {
+    this.afu.authState.subscribe((auth =>{
+      
+      this.UserauthState = auth.uid;
+      
+    
+  }));return this.UserauthState;
+}
 
   get currentUserName(): string {
-    return this.authState['email']
+    return this.UserauthState['email']
   }
 
   get currentUser(): any {
-    return (this.authState !== null) ? this.authState : null;
+    return (this.UserauthState !== null) ? this.UserauthState : null;
   }
 
   get isUserEmailLoggedIn(): boolean {
-    if ((this.authState !== null) && (!this.isUserAnonymousLoggedIn)) {
+    if ((this.UserauthState !== null) && (!this.isUserAnonymousLoggedIn)) {
       return true
     } else {
       return false
@@ -47,7 +54,7 @@ export class AuthService {
 registerWithEmail(email: string, password: string) {
     return this.afu.createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        this.authState = user
+        this.UserauthState = user
       })
       // .then((user) => {
       //   return this.afu.auth.currentUser.sendEmailVerification()
@@ -70,7 +77,8 @@ registerWithEmail(email: string, password: string) {
   {
     return this.afu.signInWithEmailAndPassword(email, password)
       .then((user) => {
-        this.authState = user
+        user=this.UserauthState
+        console.log(user);
       })
       .catch(error => {
         console.log(error)

@@ -1,0 +1,21 @@
+<!-- <p>gallery works!</p> -->
+<app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="grid">
+           <img src="../../../assets/images/im.jpg" alt="Sample photo">
+            <img src="../../../assets/images/hqdefault.jpg" alt="Sample photo">
+            <img src="../../../assets/images/IMG.jpg" alt="Sample photo">
+            <img src="../../../assets/images/Korigarh.jpg" alt="Sample photo">
+            <img src="../../../assets/images/korigarh2.jpg" alt="Sample photo">
+            <img src="../../../assets/images/nature.jpg" alt="Sample photo">
+            <img src="../../../assets/images/Natureclub.jpg" alt="Sample photo">
+            
+        </div>
+    </mat-drawer-content>
+    </mat-drawer-container>
+    <app-footer></app-footer>

@@ -26,7 +26,7 @@ export class FireBaseService {
 }
 
 export interface IEmployee {
-  //id?: string;
+  userUid: string;
   name: string;
   email: string;
   phone: number;
